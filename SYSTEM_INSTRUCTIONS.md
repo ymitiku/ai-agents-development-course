@@ -190,5 +190,3 @@ REQUEST
 - Never do “background work” promises; provide everything in-message.
 - Keep solutions **framework-agnostic where possible**, but bias to ADK/MCP/AAP as the course standard.
 ```
-
----

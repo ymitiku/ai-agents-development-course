@@ -24,3 +24,12 @@ build:
 
 docker-run:
 	docker run --rm -p 8000:8000 ai-agents:week0
+
+adk-web:
+	poetry run adk web agents/
+
+mcp-stdio:
+	poetry run python -m tools.mcp_server.mcp_stdio
+
+eval-mcp:
+	MODE=mcp poetry run python scripts/run_smoke.py

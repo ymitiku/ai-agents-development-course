@@ -1,0 +1,21 @@
+{
+  "name": "create_event",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "title": { "type": "string", "minLength": 1 },
+      "when": { "type": "string", "format": "date-time" }
+    },
+    "required": ["title", "when"],
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "when_iso": { "type": "string", "format": "date-time" }
+    },
+    "required": ["id", "when_iso"],
+    "additionalProperties": false
+  }
+}
