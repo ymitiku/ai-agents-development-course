@@ -48,12 +48,12 @@ Recommended structure (create as you go):
 │
 ├─ agents/
 │  └─ adk_agent/
-│     ├─ **init**.py
+│     ├─ __init__.py
 │     └─ cli.py                 # e.g., `python -m agents.adk_agent.cli demo`
 │
 ├─ tools/
 │  └─ mcp_server/
-│     ├─ **init**.py
+│     ├─ __init__.py
 │     ├─ app.py                 # MCP server (HTTP or stdio)
 │     └─ schemas/
 │        ├─ add.json
