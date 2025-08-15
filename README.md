@@ -1,6 +1,5 @@
 # AI Agent Development — Course & Lab Repo
-
-This repository hosts both the **course syllabus** and the **code** you’ll build while progressing through a 6-week, hands-on curriculum focused on practical AI agent development.
+This repository hosts both the **course syllabus** and the **code** that will be built while progressing through a 6-week, hands-on curriculum focused on practical AI agent development.
 
 > **Core stack:** Google **ADK** (primary orchestrator), **MCP** (Model Context Protocol) for tool servers, Google **AAP** (Agent-to-Agent Protocol) for inter-agent comms, **RAG** baseline, and **Agentic RAG** (planning + iterative retrieval).
 
@@ -21,7 +20,7 @@ This repository hosts both the **course syllabus** and the **code** you’ll bui
 ---
 
 ## Goals & Outcomes
-By the end of the course you will be able to:
+By the end of this course, the goal is to have a solid foundation in AI agent development, including:
 
 1. Implement the **agent loop** (observe → think → act) with tool calling & typed outputs.  
 2. Build production-minded **RAG**, memory, and planning components.  
@@ -211,7 +210,7 @@ For each week:
    * The **required logs** (as specified in that week’s syllabus)
    * Answers to any **quizzes** (Q1–Qn)
 
-I’ll grade, give feedback, and update your running score.
+ChatGPT will grade, give feedback, and update your running score.
 
 ---
 
