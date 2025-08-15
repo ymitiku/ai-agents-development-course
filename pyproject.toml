@@ -1,7 +1,56 @@
 [project]
 name = "ai-agents-development"
 version = "0.1.0"
-description = "Add your description here"
+description = "Course syllabus + code for a 6-week, hands-on curriculum in practical AI agent development."
+authors = [{ name = "Mitiku Yohannes", email = "se.mitiku.yohannes@gmail.com" }]
+license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+
+# --- Runtime dependencies ---
+dependencies = [
+  # Core orchestration & protocols
+  "google-adk>=1.9.0,<2.0.0",         # ADK (primary orchestrator)
+  "mcp>=1.0.0",                        # Model Context Protocol (server/client SDK)
+  "a2a-sdk>=0.1.0",                    # Agent-to-Agent protocol SDK
+
+  # MCP server (HTTP) & typing
+  "fastapi>=0.110,<0.120",
+  "uvicorn>=0.29,<0.35",
+  "pydantic>=2.6,<3.0",
+  "orjson>=3.10,<4.0",
+
+  # Client/networking & CLI
+  "httpx>=0.25,<1.0.0",
+  "tenacity>=8.2,<9.0",
+  "typing-extensions>=4.9,<5.0",
+  "rich>=13.7,<14.0",
+  "typer>=0.12,<0.13",
+
+  # RAG (baseline, portable)
+  "numpy>=1.26,<3.0",
+  "scikit-learn>=1.4,<1.6",
+
+  # Observability / tracing
+  "opentelemetry-sdk>=1.25,<2.0",
+  "opentelemetry-exporter-otlp>=1.25,<2.0",
+  "structlog>=24.1,<25.0"
+]
+
+# Optional extras you can enable via: `poetry install --with rag-faiss` or `--with rag-pgvector`
+[project.optional-dependencies]
+rag-faiss = ["faiss-cpu>=1.7.4"]                # CPU-only FAISS
+rag-pgvector = ["psycopg[binary]>=3.1,<3.2", "pgvector>=0.2.5"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# --- Dev dependencies (Poetry groups) ---
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.0,<9.0"
+pytest-asyncio = ">=0.23,<0.25"
+ruff = ">=0.5,<0.7"
+black = ">=24.3,<25.0"
+pre-commit = ">=3.6,<4.0"
+mypy = ">=1.8,<2.0"

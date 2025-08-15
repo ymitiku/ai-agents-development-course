@@ -29,7 +29,7 @@ By the end of this course, the goal is to have a solid foundation in AI agent de
 5. **Deploy** to a cloud target with secrets, logging, tracing, and monitoring.
 
 For the full syllabus (main topics only), see:  
-`docs/syllabus/main.md` (put the “AI Agent Development — Personalized Syllabus (v1)” here).
+[docs/syllabus/main.md](docs/syllabus/main.md)
 
 ---
 
@@ -47,17 +47,17 @@ Recommended structure (create as you go):
 │     └─ weekN.md               # Additional weeks as separate docs
 │
 ├─ agents/
-│  └─ adk\_agent/
+│  └─ adk_agent/
 │     ├─ **init**.py
 │     └─ cli.py                 # e.g., `python -m agents.adk_agent.cli demo`
 │
 ├─ tools/
-│  └─ mcp\_server/
+│  └─ mcp_server/
 │     ├─ **init**.py
 │     ├─ app.py                 # MCP server (HTTP or stdio)
 │     └─ schemas/
 │        ├─ add.json
-│        └─ create\_event.json
+│        └─ create_event.json
 │
 ├─ retrieval/
 │  ├─ index.py                  # RAG indexing pipeline (Week 2)
@@ -68,12 +68,12 @@ Recommended structure (create as you go):
 │  └─ harness.py                # CLI to run evals and output JSON summaries
 │
 ├─ scripts/
-│  ├─ run\_smoke.py              # 50-case harness (Week 0)
-│  └─ run\_malformed.py          # malformed-input tests (Week 0)
+│  ├─ run_smoke.py              # 50-case harness (Week 0)
+│  └─ run_malformed.py          # malformed-input tests (Week 0)
 │
 ├─ tests/
-│  ├─ test\_add.py
-│  └─ test\_create\_event.py
+│  ├─ test_add.py
+│  └─ test_create_event.py
 │
 ├─ shared/
 │  ├─ logging.py                # structured logs & trace helpers
@@ -93,9 +93,7 @@ Recommended structure (create as you go):
 ### Prerequisites
 - **Python** 3.11+ (3.12 recommended)
 - **Docker** (for containerization and parity)
-- One of:
-  - **Poetry** (recommended), or
-  - **uv** (fast alternative)
+- **Poetry** for dependency management (or `uv` if preferred)
 - (Optional) **Ollama** for local models
 
 ### Setup (Poetry)
@@ -105,19 +103,11 @@ poetry run pre-commit install
 poetry run python -m tools.mcp_server.app  # start MCP server locally
 ````
 
-### Setup (uv)
-
-```bash
-uv venv
-uv pip install -r requirements.txt
-pre-commit install
-python -m tools.mcp_server.app
-```
 
 ### Run the ADK Agent (example)
 
 ```bash
-python -m agents.adk_agent.cli demo
+poetry run adk demo
 ```
 
 ### Containerize
@@ -132,8 +122,6 @@ make docker-run
 ---
 
 ## Makefile / Common Tasks
-
-Add these targets (adjust paths as needed):
 
 ```make
 .PHONY: dev run test lint format build docker-run eval
@@ -163,8 +151,6 @@ build:
 docker-run:
 	docker run --rm -p 8000:8000 ai-agents:week0
 ```
-
-If using `uv`, replace `poetry run …` with plain `python …` or `uv run …` accordingly.
 
 ---
 
